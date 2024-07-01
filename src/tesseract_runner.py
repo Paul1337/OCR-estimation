@@ -1,6 +1,13 @@
-from src.ocr_runner import OcrRunner
+from ocr_runner import OcrRunner
+import pytesseract as tess
+tess.pytesseract.tesseract_cmd = r'C:\Tesseract-OCR\tesseract.exe'
+from PIL import Image
 
-# запускает tesseract на заданной картинке и возвращает текст
 class TesseractRunner(OcrRunner):
-  def convert_to_text(self, img):
-    return super(img).convert_to_text()
+    def convert_to_text(self, img_path):
+        return self.perform_ocr(img_path)
+
+    def perform_ocr(self, img_path):
+        img = Image.open(img_path)
+        text = tess.image_to_string(img, lang='rus')
+        return text

@@ -1,6 +1,7 @@
 from ocr_runner import OcrRunner
+from config import config
 import pytesseract as tess
-tess.pytesseract.tesseract_cmd = r'C:\Tesseract-OCR\tesseract.exe'
+tess.pytesseract.tesseract_cmd = config['DEFAULTS']['TesseractPath']
 from PIL import Image
 
 class TesseractRunner(OcrRunner):

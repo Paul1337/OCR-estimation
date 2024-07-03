@@ -1,10 +1,8 @@
-import configparser
 from src.estimation_service import EstimationService
 from src.tesseract_runner import TesseractRunner
 from src.text_comparator import TextComparator
+from src.config import config
 
-config = configparser.ConfigParser()
-res = config.read('./config.ini')
 etalons_dir = config['DEFAULT']['EtalonsDir']
 
 estimation_service = EstimationService(etalons_dir=etalons_dir, ocr_runner=TesseractRunner(), text_comparator=TextComparator)

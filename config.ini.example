@@ -1,0 +1,4 @@
+[DEFAULT]
+EtalonsDir=./etalons
+TesseractPath=/opt/local/bin/tesseract
+Mode=preproc

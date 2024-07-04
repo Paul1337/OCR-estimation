@@ -4,5 +4,4 @@ from abc import ABC, abstractmethod
 class OcrRunner:
   @abstractmethod
   def convert_to_text(self, img_path):
-    
     pass

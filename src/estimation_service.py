@@ -36,7 +36,7 @@ class EstimationService:
     if not text_file_path.exists():
       raise FileNotFoundError(f"File {text_file_path} not found.")
 
-    with open(text_file_path, 'r') as text_file:
+    with open(text_file_path, mode='r', encoding='utf-8') as text_file:
       original_text = text_file.read()
 
     ocr_text = self.ocr_runner.convert_to_text(img_path) 
@@ -49,7 +49,7 @@ class EstimationService:
     if not text_file_path.exists():
       raise FileNotFoundError(f"File {text_file_path} not found.")
 
-    with open(text_file_path, 'r') as text_file:
+    with open(text_file_path, mode='r', encoding='utf-8') as text_file:
       original_text = text_file.read()
 
     img_paths = []
